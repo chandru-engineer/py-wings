@@ -50,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = 'py_pro.urls'
@@ -76,23 +77,23 @@ WSGI_APPLICATION = 'py_pro.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'd3e67tbq55j8ct',
-#         'USER': 'ukrygvzkzocpss',
-#         'PASSWORD': 'b122084af535f9a2b06835adeea2ba906b6245b2787af923c94a409fcb32c7b4',
-#         'HOST': 'ec2-34-194-40-194.compute-1.amazonaws.com',
-#         'PORT': '5432',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dc3qeeus58dlga',
+        'USER': 'ekuqzuiabdjvkf',
+        'PASSWORD': 'a7c813e1ab421aea109a1a34ab6363aeae97a689376c6129eefabed09671e602',
+        'HOST': 'ec2-54-208-104-27.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
+}
 
 
 # Password validation
