@@ -13,8 +13,8 @@ def home(request):
 
 def qa_page(request, pk):
     topics_objects = Topics.objects.all()
-    data = Question.objects.filter(pk=pk)
-    print(data)
+    data = Question.objects.filter(topic__title__contains=pk)
+    # print(data)
 
 
     context = {'data': data, 'topics': topics_objects}

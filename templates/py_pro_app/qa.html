@@ -8,26 +8,31 @@
 <div class="container">
     <div class="card border-0 shadow my-5">
         <div class="card-body">
-            {% comment %} <div class='container'> {% endcomment %}
-                <div class="card">
-                    <div class="card-header">
+            <div class="card">
+                <div class="card-header">
+                    <div>
                         {{ x.ques }}
                     </div>
-                    <div class="card-body">
-                        <blockquote class="blockquote mb-0">
-                            <p>{{ x.describ }}</p>
-                            <hr>
-                            <p>{{ x.code }}</p>
-                            <footer class="blockquote-footer">{{ x.answer }}<cite title="Source Title">Source Title</cite></footer>
-                        </blockquote>
-                    </div>
+                    <button type="button" class="btn btn-secondary buttom-toggle" onclick="showDiv({{x.id}})">Show Answer</button>
                 </div>
-            {% endfor %}
-            <div style="height: 500px"></div>
+                <div class="card-body">
+                    <blockquote class="without-block mb-0">
+                        <p class='description'>{{ x.describ }}</p>
+                        <hr>
+                        <blockquote class=" code-snip mb-0" id="full-{{x.id}}" style="display:none;">
+                            <pre><code class="python code-snip1">{{ x.code }}</code></pre>
+                        </blockquote>
+                        <hr>
+                        <h3> Sample Output </h3>
+                        <pre><code class="python code-snip2">{{ x.answer }}</code></pre>
+                    </blockquote>
+                </div>
             </div>
-        {% comment %} </div> {% endcomment %}
+        </div>
     </div>
 </div>
+
+{% endfor %}
 
 {% else %}
 <div class="container">
@@ -35,12 +40,11 @@
       <div class="card-body p-5">
         <h1 class="fw-light">Sorry, There is no questions in this Topic</h1>
         <p class="lead">We are working with this Topics</p>
-
         <div style="height: 500px"></div>
         <a href="{% url 'home' %}"><p class="lead mb-0">Go home</p></a>
       </div>
     </div>
-  </div>
+</div>
 
 {% endif %}
 {% endblock %}

@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="container">
-    <div class="card border-0 shadow my-5">
+    <div class="card border-2 shadow my-3">
       <div class="card-body">
         {% for topic in topics %}
         {% comment %} <div class="container"> {% endcomment %}
@@ -14,7 +14,8 @@
                 <h5 class="card-title">{{ topic.title }}</h5>
                 <hr>
                 <p class="card-text">{{ topic.description }}</p>
-                <a href="{% url 'get_qa' topic.id %}" class="btn btn-primary">Go to Q & A</a>
+                <a href="{% url 'get_qa' topic.title %}" class="btn btn-primary">Go to Q & A</a>
+                <br>
               </div>
             </div>
           </div>
