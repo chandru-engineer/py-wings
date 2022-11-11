@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import Topics
+from .models import Topics, Question
+import json
 
 # Create your views here.
 
@@ -7,9 +8,15 @@ from .models import Topics
 def home(request):
     topics_objects = Topics.objects.all()
     context = {'topics': topics_objects}
-    return render(request, 'py_pro_app/navbar.html', context)
+    return render(request, 'py_pro_app/home.html', context)
 
 
 def qa_page(request, pk):
-    topic = Topics.objects.get(pk=pk)
-    return render(request, 'py_pro_app/qa.html')
+    topics_objects = Topics.objects.all()
+    data = Question.objects.filter(pk=pk)
+    print(data)
+
+
+    context = {'data': data, 'topics': topics_objects}
+
+    return render(request, 'py_pro_app/qa.html', context)

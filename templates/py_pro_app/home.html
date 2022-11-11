@@ -1,16 +1,34 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
+{% extends "py_pro_app/base.html" %}
 
-        
-        
-    </body>
-</html>
+
+
+{% block content %}
+<div class="container">
+    <div class="card border-0 shadow my-5">
+      <div class="card-body">
+        {% for topic in topics %}
+        {% comment %} <div class="container"> {% endcomment %}
+          <div class="card-row border-0 shadow my-5">
+            <div class="card bg-light">
+              <div class="card-body text-center">
+                <h5 class="card-title">{{ topic.title }}</h5>
+                <hr>
+                <p class="card-text">{{ topic.description }}</p>
+                <a href="{% url 'get_qa' topic.id %}" class="btn btn-primary">Go to Q & A</a>
+              </div>
+            </div>
+          </div>
+        {% comment %} </div> {% endcomment %}
+        <br>
+        {% endfor %} 
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+
+
+
+
+
