@@ -48,7 +48,7 @@
         <div class="overlay-content">
 
           {% for topic in topics %}
-            <a href="{% url 'get_qa' topic.id %}">{{ topic.title }}</a>
+            <a href="{% url 'get_qa' topic.title %}">{{ topic.title }}</a>
           {% endfor %}
 
         </div>
