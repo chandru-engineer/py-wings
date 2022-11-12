@@ -15,7 +15,7 @@
                 <div class="card-body">
                     <blockquote class="without-block mb-0">
                         <p class='description'>{{ x.describ }}</p>
-                        <button type="button" class="btn btn-secondary buttom-toggle" onclick="showDiv({{x.id}})">Show Answer</button>
+                        <button id ='button-{{x.id}}' type="button" class="btn btn-secondary buttom-toggle" onclick="showDiv({{x.id}})">Show Answer</button>
                         <hr>
                         <blockquote class="code-snip mb-0" id="full-{{x.id}}" style="display:none;">
                             <pre class='answer-code'><code class="python code-snip1">{{ x.code }}</code></pre>
