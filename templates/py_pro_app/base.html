@@ -22,44 +22,55 @@
         <script> 
         function showDiv(Data_id) {
           document.getElementById('full-'+Data_id).style.display = "block";
-
+          document.getElementById("button-" + Data_id).style.display = 'none';
         }
       </script>
     </head>
     <style>
-      .buttom-toggle{
-        position: absolute;
-        right: 10px;
-        top: 8px;
-    
-      }
+
 
       .code-snip{
         background-color: black;
+        border-radius: 10px;
       }
-      .code-snip1 {
+
+
+      .answer-code {
+        padding: 15px;
         color: white;
       }
+
+
+      .code-snip-text{
+        background-color: #dedbd5;
+        border-radius: 10px;
+      }
+
+      .answer-text{
+        padding: 15px;
+        color: black;
+      }
+
     </style>
 <body>
 
     <div id="myNav" class="overlay">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div class="overlay-content">
-
           {% for topic in topics %}
             <a href="{% url 'get_qa' topic.title %}">{{ topic.title }}</a>
           {% endfor %}
-
         </div>
-      </div>
+    </div>
 
-        <nav class="navbar navbar-light bg-light justify-content-between">
-          <div class='container'>
-            <a class="navbar-brand" href="{% url 'home' %}"><h3>Py-wings </h3></a>
-            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
-          </div>
-        </nav>
+    <nav class="navbar navbar-light justify-content-between"><br><br>
+        <div class='container'>
+            <a class="navbar-brand" href="{% url 'home' %}">
+              <h3>Py-<img src="{%  static '/py_pro_app/icons/wings.ico' %}" alt="Logo" style="width:40px;"></h3>
+            </a>
+            <span style="font-size:30px; cursor:pointer;" onclick="openNav()">&#9776; </span>
+        </div>
+    </nav>
     {% block content %}
     
     
@@ -69,6 +80,7 @@
         <p>Powered By Py-Spiders Developers<br>
         <a>With Your Love</a></p>
     </footer>
+
     <script src="{% static 'py_pro_app/js/navbar.js' %}"></script> 
 
 

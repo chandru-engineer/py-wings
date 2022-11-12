@@ -5,6 +5,9 @@
 {% if data %}
 {% for x in data %}
 
+
+
+
 <div class="container">
     <div class="card border-0 shadow my-5">
         <div class="card-body">
@@ -13,24 +16,30 @@
                     <div>
                         {{ x.ques }}
                     </div>
-                    <button type="button" class="btn btn-secondary buttom-toggle" onclick="showDiv({{x.id}})">Show Answer</button>
                 </div>
                 <div class="card-body">
                     <blockquote class="without-block mb-0">
                         <p class='description'>{{ x.describ }}</p>
+                        <button type="button" class="btn btn-secondary buttom-toggle" onclick="showDiv({{x.id}})">Show Answer</button>
                         <hr>
-                        <blockquote class=" code-snip mb-0" id="full-{{x.id}}" style="display:none;">
-                            <pre><code class="python code-snip1">{{ x.code }}</code></pre>
+                        <blockquote class="code-snip mb-0" id="full-{{x.id}}" style="display:none;">
+                            <pre class='answer-code'><code class="python code-snip1">{{ x.code }}</code></pre>
                         </blockquote>
                         <hr>
-                        <h3> Sample Output </h3>
-                        <pre><code class="python code-snip2">{{ x.answer }}</code></pre>
+                        <blockquote class="code-snip-text mb-0">
+                            
+                            <pre class='answer-text'><h3>Sample Output </h3><hr><code class="python">{{ x.answer }}</code></pre>
+                        </blockquote>
                     </blockquote>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
+
 
 {% endfor %}
 
