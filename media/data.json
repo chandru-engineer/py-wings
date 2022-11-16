@@ -1,0 +1,12 @@
+{
+  "1": {
+    "q": "write a function with to print given number?",
+    "code": "print(n)",
+    "solution": 5
+  },
+  "2": {
+    "q": "write a function with to print given number?",
+    "code": "print(n)",
+    "solution": 5
+  }
+}

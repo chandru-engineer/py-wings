@@ -16,13 +16,23 @@
                     <blockquote class="without-block mb-0">
                         <p class='description'>{{ x.describ }}</p>
                         <button id ='button-{{x.id}}' type="button" class="btn btn-secondary buttom-toggle" onclick="showDiv({{x.id}})">Show Answer</button>
+                        <a href="{% url 'runcode_' %}" target='_black'>
+                            <button style='margin:20px;' id ='button-compiler-{{x.id}}' type="button" class="btn btn-secondary buttom-toggle" onclick="showDiv({{x.id}})">
+                                Online Compiler
+                            </button>
+                        </a>
                         <hr>
                         <blockquote class="code-snip mb-0" id="full-{{x.id}}" style="display:none;">
+                            <a href="{% url 'runcode' x.id  %}" target='_black'>
+                                <button style='margin:20px;' type="button" class="btn btn-secondary buttom-toggle">
+                                    Online Compiler
+                                </button>
+                            </a>
                             <pre class='answer-code'><code class="python code-snip1">{{ x.code }}</code></pre>
                         </blockquote>
                         <hr>
                         <blockquote class="code-snip-text mb-0">
-                            
+                            <hr>
                             <pre class='answer-text'><h3>Sample Output </h3><hr><code class="python">{{ x.answer }}</code></pre>
                         </blockquote>
                     </blockquote>

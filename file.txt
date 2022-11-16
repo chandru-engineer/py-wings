@@ -1,0 +1,4 @@
+The principal is 8
+The time period is 6
+The rate of interest is 8
+The Simple Interest is 3.84
